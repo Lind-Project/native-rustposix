@@ -23,7 +23,7 @@ int main( int argc, char *argv[] ) {
     sigemptyset( &sact.sa_mask );
     sact.sa_flags = 0;
     sact.sa_handler = catcher;
-    lind_sigaction( SIGALRM, &sact, NULL );
+    lind_sigaction( SIGALRM, &sact, NULL, 0 );
 
     printf( "SIGALRM signals blocked\n");
     fflush(stdout);

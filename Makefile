@@ -28,4 +28,4 @@ perf-test:
 
 # Clean the build
 clean:
-	rm -f -- **/*.o *~ core
+	rm -f -- **/*.o *.so *~ core

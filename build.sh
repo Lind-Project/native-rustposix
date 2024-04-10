@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Copying librustposix.so"
+cp /home/lind/lind_project/src/safeposix-rust/target/release/librustposix.so librustposix.so
+
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 $CC $CFLAGS tests/lind_platform.c -o tests/lind_platform.o
 
