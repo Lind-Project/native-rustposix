@@ -6,7 +6,7 @@ Pull this repo, then
 ```
 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 ```
-Then compile the program by `python3 build.py pipe-cages`, for example.
+Then compile the program by `make test` or `make perf-test`, for example.
 
 ## Write a c program
 - `#include "lind_platform.h"` at top
