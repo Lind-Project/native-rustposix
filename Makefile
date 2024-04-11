@@ -16,7 +16,16 @@ OBJ=$(SRC:.c=.o)
 %: %.o $(OBJ)
 	$(CC) $< $(OBJ) $(LDFLAGS) -o $@
 
+# Build user tests
+test:
+	@echo "Building user tests"
+	CC="$(CC)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" ./build.sh tests.txt
+
+# Build user performance tests
+perf-test:
+	@echo "Building user performance tests"
+	CC="$(CC)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" ./build.sh perf_tests.txt
+
 # Clean the build
 clean:
-	rm -f *.o *~ core
-
+	rm -f -- **/*.o *.so *~ core

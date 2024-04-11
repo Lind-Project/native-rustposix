@@ -9,7 +9,7 @@
 unsigned long long WRITE_BUFFER_SIZE = 1ULL << 16;
 unsigned long long NUMBER_OF_WRITES = 1ULL << (30 - 16);
 unsigned long long READ_BUFFER_SIZE = 1ULL << 16;
-unsigned long long OUTLOOP = 1UL << 4;
+unsigned long long OUTLOOP = 1UL << 5;
 
 int fd[2];
 

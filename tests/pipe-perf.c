@@ -9,7 +9,7 @@
 unsigned long long WRITE_BUFFER_SIZE = 1UL << 16;
 unsigned long long NUMBER_OF_WRITES = 1UL << (30 - 14);
 unsigned long long READ_BUFFER_SIZE = 1UL << 16;
-unsigned long long OUTLOOP = 1UL << 4;
+unsigned long long OUTLOOP = 1UL << 5;
 
 pthread_barrier_t barrier; // wait for buffer allocation
 int fd[2];
