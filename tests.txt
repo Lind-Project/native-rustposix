@@ -1,5 +1,5 @@
 getpid
 mkdir_rmdir
-pipe-cages
+pipe-perf
 pipe
 sigalrm
