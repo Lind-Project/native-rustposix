@@ -3,7 +3,7 @@
 RUSTPOSIX_PATH="${RUSTPOSIX_PATH:-/home/lind/lind_project/src/safeposix-rust/target/release}"
 if [ ! -f $RUSTPOSIX_PATH/librustposix.so ]; then
     echo "File not found: $RUSTPOSIX_PATH/librustposix.so"
-    exit 127
+    exit 2
 fi
 
 echo "Copying librustposix.so"
