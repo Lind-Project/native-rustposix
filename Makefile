@@ -28,4 +28,5 @@ perf-test:
 
 # Clean the build
 clean:
+	find tests/ -type f ! -name "*.*" -delete
 	rm -f -- **/*.o *.so *~ core
