@@ -13,6 +13,12 @@ unsigned long long OUTLOOP = 1UL << 5;
 
 int fd[2];
 
+long long gettimens() {
+    struct timespec tp;
+    clock_gettime(CLOCK_MONOTONIC, &tp);
+    return (long long)tp.tv_sec * 1000000000LL + tp.tv_nsec;
+}
+
 void* writerThreadFuncion(void *arg) {
     (void)arg;
 
@@ -24,6 +30,9 @@ void* writerThreadFuncion(void *arg) {
     // preapre the write buffer
     char *buffer = malloc(sizeof(char) * WRITE_BUFFER_SIZE);
     for (int i = 0; i < WRITE_BUFFER_SIZE; i++) buffer[i] = 'A';
+
+    fprintf(stderr, "write-start: %lld\n", gettimens());
+    fflush(stderr);   
 
     for (unsigned long long n = 0; n < OUTLOOP; n++)
     {
@@ -50,6 +59,8 @@ void* readerThreadFunction(void *arg) {
 
     while ((lind_read(fd[0], buffer, READ_BUFFER_SIZE, 3)) > 0) {}
     
+    fprintf(stderr, "read-end: %lld\n", gettimens());
+    fflush(stderr);
     free(buffer);
     return NULL;
 }
