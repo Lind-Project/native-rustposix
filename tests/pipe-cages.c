@@ -34,12 +34,8 @@ void* writerThreadFuncion(void *arg) {
     fprintf(stderr, "write-start: %lld\n", gettimens());
     fflush(stderr);   
 
-    for (unsigned long long n = 0; n < OUTLOOP; n++)
-    {
-        for (unsigned long long count = 0; count < NUMBER_OF_WRITES; count++)
-        {
-            lind_write(fd[1], buffer, WRITE_BUFFER_SIZE, 2);
-        }
+    for (unsigned long long count = 0; count < NUMBER_OF_WRITES; count++) {
+        lind_write(fd[1], buffer, WRITE_BUFFER_SIZE, 2);
     }
     lind_close(fd[1], 2);
     free(buffer);
